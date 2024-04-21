@@ -29,7 +29,12 @@ class Matrix{
 
     }
   Matrix& operator=(const Matrix& matrix2){
-     row=matrix2.row;
+    if (this!=&matrix2)   {  
+        for (int i = 0; i < row; ++i) {
+            delete[] matrix[i];
+        }
+        delete[] matrix;
+    row=matrix2.row;
     col=matrix2.col;
      matrix=new int*[row];
             for(int i=0;i<row;++i){
@@ -39,6 +44,7 @@ class Matrix{
                 }
             }
             return *this;
+   }
   }
    void initializeMatrix(){
     srand(time(0));
@@ -49,6 +55,7 @@ class Matrix{
             matrix[i][j] = rand() % 10;
         }
     }
+   
  }
     void printMatrix()
 {
