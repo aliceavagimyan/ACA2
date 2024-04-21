@@ -29,7 +29,8 @@ class Matrix{
 
     }
   Matrix& operator=(const Matrix& matrix2){
-   
+     row=matrix2.row;
+    col=matrix2.col;
      matrix=new int*[row];
             for(int i=0;i<row;++i){
                 matrix[i]=new int[col];
