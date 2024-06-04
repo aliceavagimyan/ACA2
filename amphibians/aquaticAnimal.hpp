@@ -1,7 +1,7 @@
 #ifndef AQUATICANIMAL_HPP
 #define AQUATICANIMAL_HPP
 #include "animal.hpp"
-class AquaticAnimal:public Animal{ 
+class AquaticAnimal:public virtual Animal{ 
  public:
  AquaticAnimal( std::string& name,const int& age,const std::string& species,const std::string& swimLimbType,const std::string& swimBreathingType):
   Animal(name,age,species),m_swimLimbType(swimLimbType), m_swimBreathingType(swimBreathingType){}

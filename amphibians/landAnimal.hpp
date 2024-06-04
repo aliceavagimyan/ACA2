@@ -1,7 +1,7 @@
 #ifndef LANDANIMAL_HPP
 #define LANDANIMAL_HPP
 #include "animal.hpp"
-class LandAnimal:public Animal{ 
+class LandAnimal:public virtual Animal{ 
  public:
   LandAnimal( std::string& name,const int& age,const std::string& species,const std::string& limbType,const std::string& breathingType):
   Animal(name,age,species),m_limbType(limbType), m_breathingType(breathingType){}

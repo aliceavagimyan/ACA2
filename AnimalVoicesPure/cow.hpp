@@ -7,7 +7,7 @@ class Cow:public Animal{
     std::string voice() const override;
     int age() const override;
     int weight()const override;
-    Cow(int age, int weight) : Animal(age, weight),m_age(age), m_weight(weight) {}
+    Cow(const int& age, const int& weight) : Animal(age, weight),m_age(age), m_weight(weight) {}
     private:
     int  m_age;
     int m_weight;
