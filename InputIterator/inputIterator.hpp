@@ -21,6 +21,9 @@ public:
     T& operator*() const {
         return ptr->data;
     }
+    T* operator->() const {
+        return &(ptr->data);
+    }
 
     InputIterator& operator++() {
         ptr = ptr->pNext;
