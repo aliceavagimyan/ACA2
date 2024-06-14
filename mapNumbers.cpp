@@ -3,7 +3,7 @@
 #include <string>
 
 std::string numbersToString(int n) {
-    std::map<int, std::string> numbers = {
+    static std::map<int, std::string> numbers = {
         {1, "One"},
         {2, "Two"},
         {3, "Three"},
