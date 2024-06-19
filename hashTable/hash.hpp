@@ -56,7 +56,7 @@ public:
         int index = hashFunction(key);
         for (auto node : arr[index]) {
             if (node->key == key) {
-                return node->val; // Return value if key found
+                return node->val; 
             }
         }
         std::cout << "Key '" << key << "' not found in hash map" << std::endl;
