@@ -11,7 +11,7 @@ public:
     void push_back(const T& element);
     void print() const;
       void resize();
-
+      T& at(int index );
 private:
     T* array;
     int size;
@@ -47,6 +47,14 @@ void Vector<T>::resize() {
     delete[] array;
     array = newArray;
 }
+template <typename T>
+T&  Vector<T>::at(int index){
+       if( index>=size){
+        throw std::out_of_range("Invalid Index");
+       }
+       return array[index];
+      }
+
 
 template <typename T>
 void Vector<T>::print() const {
