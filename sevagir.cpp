@@ -159,3 +159,95 @@ template<typename T>
 bool List<T>::empty() const {
     return head == nullptr;
 }
+
+#ifndef STACK_HPP
+#define STACK_HPP
+
+#include "list.hpp"
+
+template <typename T>
+class Stack : private List<T> {
+public:
+    void push(const T& data) {
+        this->push_front(data);
+    }
+
+    void pop() {
+        if (this->empty()) {
+            std::cout << "Stack empty" << std::endl;
+        } else {
+            this->pop_front();
+        }
+    }
+
+    bool empty() const {
+        return List<T>::empty();
+    }
+
+    T top() const {
+        return List<T>::top();
+    }
+
+    int size() const {
+        int count = 0;
+        typename List<T>::template Node<T>* current = this->head;
+        while (current != nullptr) {
+            ++count;
+            current = current->pNext;
+        }
+        return count;
+    }
+
+    void print() const {
+        List<T>::print();
+    }
+};
+
+#endif // STACK_HPP
+
+#include <iostream>
+#include "stackWithList.hpp"
+
+int main() {
+
+    Stack<int> stack;
+
+    
+    stack.push(10);
+    stack.push(20);
+    stack.push(30);
+    stack.push(40);
+
+    
+    std::cout << "Stack elements:" << std::endl;
+    stack.print();
+
+    
+    std::cout << "Top element: " << stack.top() << std::endl;
+
+   
+    stack.pop();
+    std::cout << "After pop, stack elements:" << std::endl;
+    stack.print();
+
+    
+    std::cout << "Stack size: " << stack.size() << std::endl;
+
+    
+    if (stack.empty()) {
+        std::cout << "Stack is empty" << std::endl;
+    } else {
+        std::cout << "Stack is not empty" << std::endl;
+    }
+
+    try {
+        while (!stack.empty()) {
+            stack.pop();
+        }
+        stack.top(); 
+    } catch (const std::exception& e) {
+        std::cout << "Exception caught: " << e.what() << std::endl;
+    }
+
+    return 0;
+}

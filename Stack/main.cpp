@@ -1,27 +1,46 @@
-//#include "stackwithVec.hpp"
-#include "stackwithList.hpp"
-int main(){
-Stack<int> stack; 
-    stack.push(10); 
-     stack.push(20); 
-     stack.push(30); 
-    stack.push(40); 
-    stack.print();
-    std::cout << "Current size of the stack is " << stack.size() 
-         << std::endl; 
-   stack.pop();
-   stack.print();
-   std::cout<<"top element after popping "<<stack.top()<<std::endl;
-/*Stack<int> mystack;
- mystack.push(1);
- mystack.push(5);
-  mystack.push(7);
-  mystack.push(6);
-  mystack.push(3);
-  mystack.push(2);
+#include <iostream>
+#include "stackWithList.hpp"
 
-  mystack.pop();
- std::cout<<mystack.top()<<std::endl;*/
- 
+int main() {
+
+    Stack<int> stack;
+
+    
+    stack.push(10);
+    stack.push(20);
+    stack.push(30);
+    stack.push(40);
+
+    
+    std::cout << "Stack elements:" << std::endl;
+    stack.print();
+
+    
+    std::cout << "Top element: " << stack.top() << std::endl;
+
+   
+    stack.pop();
+    std::cout << "After pop, stack elements:" << std::endl;
+    stack.print();
+
+    
+    std::cout << "Stack size: " << stack.size() << std::endl;
+
+    
+    if (stack.empty()) {
+        std::cout << "Stack is empty" << std::endl;
+    } else {
+        std::cout << "Stack is not empty" << std::endl;
+    }
+
+    try {
+        while (!stack.empty()) {
+            stack.pop();
+        }
+        stack.top(); 
+    } catch (const std::exception& e) {
+        std::cout << "Exception caught: " << e.what() << std::endl;
+    }
+
     return 0;
 }

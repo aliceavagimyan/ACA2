@@ -15,7 +15,7 @@ public:
     void pop_front();
     void insert(const T& element ,const int& index);
     void print() const;
-      void resize();
+    void resize();
 
 private:
     T* array;
@@ -104,7 +104,6 @@ void Vector<T>::insert(const T& element,const int& index){
     array[index]=element;
     ++size;
 }
-
 
 
 

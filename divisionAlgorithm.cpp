@@ -29,7 +29,7 @@ int division(int& a,int& b){
      return negative ? -answer:answer;
 }
 int main() {
-    int a= 24;
+    int a= 0;
     int b=7;
     
   std::cout << "Result: " << a<< " / " << b << " = " << division(a,b) << std::endl;

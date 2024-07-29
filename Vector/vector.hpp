@@ -10,8 +10,8 @@ public:
     ~Vector();
     void push_back(const T& element);
     void print() const;
-      void resize();
-      T& at(int index );
+    void resize();
+    T& at(int index );
 private:
     T* array;
     int size;
@@ -54,8 +54,6 @@ T&  Vector<T>::at(int index){
        }
        return array[index];
       }
-
-
 template <typename T>
 void Vector<T>::print() const {
     for (int i = 0; i < size; ++i) {

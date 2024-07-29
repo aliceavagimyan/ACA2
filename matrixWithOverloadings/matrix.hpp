@@ -13,6 +13,7 @@ class Matrix
     //prefix
     Matrix& operator++();
     //postfix
+    
     Matrix operator++(int);
     void initializeMatrix();
     void printMatrix();

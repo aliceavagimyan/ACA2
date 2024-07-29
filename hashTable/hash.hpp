@@ -1,5 +1,5 @@
-#ifndef HASH
-#define HASH
+#ifndef HASH_HPP
+#define HASH_HPP
 
 #include <iostream>
 #include <vector>
@@ -68,4 +68,4 @@ public:
     }
 };
 
-#endif // HASH
+#endif // HASH_HPP

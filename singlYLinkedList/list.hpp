@@ -13,8 +13,8 @@ class List{
      void print();
      void reverse();
      T find_n_fromEnd(int n) const;
-     void insert(T data,int position);
-    // bool hasCycle() const ;
+    void insert(T data,int position);
+    bool hasCycle() const ;
    Node<T>* getHead() const {
         return head;
     }
@@ -123,7 +123,7 @@ void List<T>::reverse() {
 template<typename T>
 T List<T>::find_n_fromEnd(int n) const {
     if (head == nullptr || n <= 0) {
-        throw std::invalid_argument("Некорректное значение n");
+       return;
     }
     int length = 0;
     Node<T>* current = head;
